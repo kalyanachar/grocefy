@@ -1,0 +1,272 @@
+      <!-- Top bar -->
+      <div class="topbar">
+        <div class="container d-flex">
+           <!-- service contact -->
+           <nav class="nav d-none d-md-flex"> 
+              <a class="nav-link pl-0" href="javascript:void(0)"><i data-feather="phone"></i> 212 123 456 789</a>
+              <a class="nav-link pl-0" href="javascript:void(0)"><i data-feather="mail"></i> info@grocefy.com</a>
+           </nav>
+           <!-- social media -->
+           <nav class="nav">
+              <a class="nav-link pr-2 pl-0" href="javascript:void(0)"><i data-feather="facebook"></i></a>
+              <a class="nav-link px-2 pl-0" href="javascript:void(0)"><i data-feather="twitter"></i></a>
+              <a class="nav-link px-2 pl-0" href="javascript:void(0)"><i data-feather="instagram"></i></a>
+           </nav>
+           <!-- language -->
+           <nav class="nav nav-lang ml-auto">
+              <!-- push it to the right -->
+              <a class="nav-link" [routerLink]="['/login']">Login</a>
+              <a class="nav-link pipe pl-0">|</a>
+              <a class="nav-link" [routerLink]="['/contactus']">Contact Us</a>
+           </nav>
+        </div>
+        <!-- /.container -->
+     </div>
+     <!-- /Top bar -->
+     <!--Header -->
+     <header>
+        <div class="container">
+           <!-- Sidebar toggler -->
+           <a class="nav-link nav-icon ml-ni nav-toggler mr-3 d-flex d-lg-none" href="#" data-toggle="modal" data-target="#menuModal"><i data-feather="menu"></i></a>
+           <!-- Logo -->
+           <a class="nav-link nav-logo logo_agile" href="index.html">
+              <img src="assets/img/logo.png" height="68" alt="Logo">
+           </a>
+           <!-- Main navigation -->
+           <ul class="nav nav-main ml-auto d-none d-lg-flex">
+              <!-- hidden on md -->
+              <li  *ngFor="let menu of menuList" class="nav-item dropdown dropdown-hover dropdown-mega">
+                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                 {{menu.name}}<i data-feather="chevron-down"></i>
+                 </a>
+                 <div class="dropdown-menu">
+                    <div class="row">
+                       <div class="col-lg-3" *ngFor="let subCat of menu.sub_categories">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>{{subCat.name}}</strong></a>
+                             <a *ngFor="let proType of subCat.product_types" href="shop-grid.html" class="list-group-item list-group-item-action">{{proType.name}}</a>
+                             <!-- <a href="shop-grid.html" class="list-group-item list-group-item-action">Fruit Drink & Juice</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Minearal Water</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Soft Drinks</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Cofee</a> -->
+                          </div>
+                       </div>
+                       <!-- <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Bread, Bekary & Dairy</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Biscuits</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Breads & Burns</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Cakes & Pastries</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Cookies,Rusk & Khari</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Dairy</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Garment Bread</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Personal Care</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Bath,Face & Handwash</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Hair Care</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Oral Care</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Skin Care</a>
+                          </div>
+                       </div> -->
+                       <!-- <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Foodgrains, Oil & Masala</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Atta, Flours & Sooji</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Salt, Sugar & Jaggery</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Rice & Rice Products</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Dals & Pulses</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Edible Oils & Ghee</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Masalas & Spices</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Dry Fruits</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Organic Staples</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Snacks & Branded Foods</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Noodle, Pasta & Vermicelli</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Spreads, Sauces & Ketchup</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Forgien Veggies & Snacks</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Snacks & Namkeen</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Choclates & Candies</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Ready To Cook & Eat</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Pickles & Chutney</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Indian Mithai</a>
+                          </div>
+                       </div> -->
+                    </div>
+                 </div>
+              </li>
+              <!-- <li class="nav-item dropdown dropdown-hover dropdown-mega">
+                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                 Household<i data-feather="chevron-down"></i>
+                 </a>
+                 <div class="dropdown-menu">
+                    <div class="row">
+                       <div class="col-lg-3">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Cleaners</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Toilet Cleaners</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Floor & Other Cleaners</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Kitchen, glass & Drain</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Imported Cleaners Drinks</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Metal, Furniture Cleaners</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Freshners & Repellents</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Air Freshener</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Insect Repellent</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Mosquito Repellent</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Disposables, Garbage Bag</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Aluminium Foil, Clingwrap</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Garbage Bags</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Kitchen Rolls</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Paper Napkin, Tissue Box</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Paper Napkin, Toilet Paper</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Paper Napkin, Wet Wipe, Pocket Tissues</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Bins & Bathroom Ware</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Bath Stool, Basin & Sets</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Buckets & Mugs</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Dustbins</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Hangers, Clips & Rope</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Laundry, Storage Baskets</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Other Plastic Ware</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Soap Cases & Dispensers</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Mops, Brushes & Scrubs</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">
+                             Brooms & Dust Pans</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Dust Cloth & Wipes</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Mops, Wipers</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Toilet & Other Brushes</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Utensil Scrub-Pad, Glove</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Mops, Brushes & Scrubs</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">
+                             Brooms & Dust Pans</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Dust Cloth & Wipes</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Mops, Wipers</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Toilet & Other Brushes</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Utensil Scrub-Pad, Glove</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Stationery</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Colours & Crayons</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Exam Pads & Pencil Box</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Notebook, Files & Folders</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Pen, Pencils</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Scissor, Glue & Tape</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-3 border-left">
+                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Pooja Needs</strong></a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Agarbatti, Incense Sticks</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Camphor & Wicks</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Candles & Match Box</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Lamp & Lamp Oil</a>
+                             <a href="shop-grid.html" class="list-group-item list-group-item-action">Other Pooja Needs</a>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="offer.html">Offers</a></li> -->
+           </ul>
+           <!-- /Main navigation -->
+           <!-- Search form -->
+           <form class="form-inline form-search ml-auto mr-0 mr-sm-1 d-none d-sm-flex">
+              <div class="input-group input-group-search">
+                 <div class="input-group-prepend">
+                    <button class="btn btn-light d-flex d-sm-none search-toggle" type="button"><i data-feather="chevron-left"></i></button>
+                 </div>
+                 <input type="text" class="form-control border-0 bg-light input-search" placeholder="Search Products...">
+                 <div class="input-group-append">
+                    <button class="btn btn-light" type="submit"><i data-feather="search"></i></button>
+                 </div>
+              </div>
+           </form>
+           <!-- /Search form -->
+           <ul class="nav ml-auto ml-sm-0">
+              <!-- Search form toggler -->
+              <li class="nav-item d-block d-sm-none ml-2 ml-lg-0"><a class="nav-link nav-icon search-toggle" href="#"><i data-feather="search"></i></a></li>
+              <!-- Cart dropdown -->
+              <li class="nav-item dropdown dropdown-hover dropdown-cart">
+                 <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="cart.html" role="button" aria-haspopup="true" aria-expanded="false">
+                 <i data-feather="shopping-cart"></i>
+                 <span class="badge badge-primary">4</span>
+                 </a>
+                 <div class="dropdown-menu dropdown-menu-right">
+                    <div class="media">
+                       <a href="shop-single.html"><img src="assets/img/products/1_small.jpg" width="50" height="50" alt="Hanes Hooded Sweatshirt"></a>
+                       <div class="media-body">
+                          <a href="shop-single.html" title="Hanes Hooded Sweatshirt">Hanes Hooded Sweatshirt</a>
+                          <span class="qty">1</span> x <span class="price">$18.56</span>
+                          <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                       </div>
+                    </div>
+                    <div class="media">
+                       <a href="shop-single.html"><img src="assets/img/products/2_small.jpg" width="50" height="50" alt="The Flash Logo T-Shirt"></a>
+                       <div class="media-body">
+                          <a href="shop-single.html" title="The Flash Logo T-Shirt">The Flash Logo T-Shirt</a>
+                          <span class="qty">1</span> x <span class="price">$16.64</span>
+                          <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                       </div>
+                    </div>
+                    <div class="media">
+                       <a href="shop-single.html"><img src="assets/img/products/3_small.jpg" width="50" height="50" alt="Open Front Cropped Cardigans"></a>
+                       <div class="media-body">
+                          <a href="shop-single.html" title="Open Front Cropped Cardigans">Open Front Cropped Cardigans</a>
+                          <span class="qty">1</span> x <span class="price">$15.20</span>
+                          <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                       </div>
+                    </div>
+                    <div class="media">
+                       <a href="shop-single.html"><img src="assets/img/products/4_small.jpg" width="50" height="50" alt="Cotton Fleece Long Hoodie"></a>
+                       <div class="media-body">
+                          <a href="shop-single.html" title="Cotton Fleece Long Hoodie">Cotton Fleece Long Hoodie</a>
+                          <span class="qty">1</span> x <span class="price">$85.00</span>
+                          <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                       </div>
+                    </div>
+                    <div class="d-flex justify-content-between pb-3 pt-2">
+                       <span>Total</span>
+                       <strong>$135.40</strong>
+                    </div>
+                    <div class="d-flex justify-content-between pb-2">
+                       <div class="w-100 mr-1">
+                          <a href="cart.html" class="btn btn-block rounded-pill btn-secondary">View Cart</a>
+                       </div>
+                       <div class="w-100 ml-1">
+                          <a href="shipping.html" class="btn btn-block rounded-pill btn-primary">Checkout</a>
+                       </div>
+                    </div>
+                 </div>
+              </li>
+              <!-- /Cart dropdown -->
+           </ul>
+        </div>
+        <!-- /.container -->
+     </header>
+     <!-- /Header -->

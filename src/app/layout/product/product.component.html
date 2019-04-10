@@ -1,0 +1,348 @@
+ <!-- Main Content -->
+ <div class="container mt-3 mb-3">
+  <div class="row gutters-3">
+     <!-- Shop Filters -->
+     <div class="col-lg-3 col-md-4">
+        <div class="accordion accordion-caret accordion-sidebar d-none d-md-block">
+           <div class="card">
+              <div class="card-header">
+                 <a href="#filter-categories" data-toggle="collapse" aria-expanded="true" aria-controls="filter-categories" role="button" class="h6">
+                 CATEGORIES
+                 </a>
+              </div>
+              <div id="filter-categories" class="collapse show">
+                 <div class="card-body">
+                    <ul class="list-tree">
+                       <li>
+                          <a href="#" class="has-arrow">Beverages <small class="counter">(120)</small></a>
+                          <ul>
+                             <li class="mm-active"><a href="javascript:void(0)">Energy & Health Drinks<small class="counter">(40)</small></a></li>
+                             <li><a href="javascript:void(0)">Fruit Drink & Juice<small class="counter">(20)</small></a></li>
+                             <li><a href="javascript:void(0)">Minearal Water<small class="counter">(35)</small></a></li>
+                             <li><a href="javascript:void(0)">Soft Drinks<small class="counter">(25)</small></a></li>
+                             <li><a href="javascript:void(0)">Cofee<small class="counter">(25)</small></a></li>
+                          </ul>
+                       </li>
+                    </ul>
+                 </div>
+              </div>
+           </div>
+           <div class="card">
+              <div class="card-header">
+                 <a href="#filter-price" data-toggle="collapse" aria-expanded="true" aria-controls="filter-price" role="button" class="h6">
+                 PRICE
+                 </a>
+              </div>
+              <div id="filter-price" class="collapse show">
+                 <div class="card-body">
+                    <div class="d-flex justify-content-between mb-3">
+                       <input type="text" class="form-control form-control-sm rounded-pill text-center bold roboto-condensed bg-light mr-2 minw-0" id="price-slider-min">
+                       <input type="text" class="form-control form-control-sm rounded-pill text-center bold roboto-condensed bg-light ml-2 minw-0" id="price-slider-max">
+                    </div>
+                    <div id="price-slider"></div>
+                 </div>
+              </div>
+           </div>
+           <div class="card">
+              <div class="card-header">
+                 <a href="#filter-size" data-toggle="collapse" aria-expanded="true" aria-controls="filter-size" role="button" class="h6">
+                 DISCOUNT
+                 </a>
+              </div>
+              <div id="filter-size" class="collapse show">
+                 <div class="card-body">
+                    <div class="custom-control custom-checkbox">
+                       <input type="checkbox" class="custom-control-input" id="size-small">
+                       <label class="custom-control-label" for="size-small">Upto 5% <small class="counter">(20)</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                       <input type="checkbox" class="custom-control-input" id="size-medium" checked>
+                       <label class="custom-control-label" for="size-medium">5% - 10% <small class="counter">(55)</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                       <input type="checkbox" class="custom-control-input" id="size-medium" checked>
+                       <label class="custom-control-label" for="size-medium">10% - 15% <small class="counter">(27)</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                       <input type="checkbox" class="custom-control-input" id="size-medium" checked>
+                       <label class="custom-control-label" for="size-medium">15% - 25% <small class="counter">(67)</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                       <input type="checkbox" class="custom-control-input" id="size-medium" checked>
+                       <label class="custom-control-label" for="size-medium">More Than 25% <small class="counter">(75)</small></label>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="card">
+              <div class="card-header">
+                 <a href="#filter-brands" data-toggle="collapse" aria-expanded="true" aria-controls="filter-brands" role="button" class="h6">
+                 BRANDS
+                 </a>
+              </div>
+              <div id="filter-brands" class="collapse show">
+                 <div class="card-body">
+                    <div class="input-group input-group-sm input-group-search mb-3">
+                       <div class="input-group-prepend">
+                          <button class="btn btn-light" type="button"><i data-feather="search"></i></button>
+                       </div>
+                       <input type="text" class="form-control border-0 bg-light" id="search-brands" placeholder="Search by Brand">
+                    </div>
+                    <div class="brands-list">
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-tommy-hilfiger">
+                          <label class="custom-control-label" for="brand-tommy-hilfiger">24 Mantra<small class="counter">43</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-nike">
+                          <label class="custom-control-label" for="brand-nike">7 Up Nimbooz<small class="counter">245</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-hugo-boss">
+                          <label class="custom-control-label" for="brand-hugo-boss">Appy<small class="counter">221</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-burberry">
+                          <label class="custom-control-label" for="brand-burberry">Aquafina<small class="counter">157</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-levi's">
+                          <label class="custom-control-label" for="brand-levi's">Auric<small class="counter">272</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-gucci">
+                          <label class="custom-control-label" for="brand-gucci">Ayusya<small class="counter">218</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-lacoste">
+                          <label class="custom-control-label" for="brand-lacoste">B Natural<small class="counter">166</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-adidas">
+                          <label class="custom-control-label" for="brand-adidas">bb Combo<small class="counter">244</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-the-north-face">
+                          <label class="custom-control-label" for="brand-the-north-face">bb Royal<small class="counter">10</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-versace">
+                          <label class="custom-control-label" for="brand-versace">Bisleri<small class="counter">205</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-rolex">
+                          <label class="custom-control-label" for="brand-rolex">Boost<small class="counter">203</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-diesel">
+                          <label class="custom-control-label" for="brand-diesel">Bournvita<small class="counter">132</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-calvin-klein">
+                          <label class="custom-control-label" for="brand-calvin-klein">Bru<small class="counter">55</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-armani-exchange">
+                          <label class="custom-control-label" for="brand-armani-exchange">Cadbury<small class="counter">207</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-prada">
+                          <label class="custom-control-label" for="brand-prada">Cadbury BournVita<small class="counter">42</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-zara">
+                          <label class="custom-control-label" for="brand-zara">Catch<small class="counter">112</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-vans">
+                          <label class="custom-control-label" for="brand-vans">Coca Cola<small class="counter">192</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-hermès">
+                          <label class="custom-control-label" for="brand-hermès">Cocojal<small class="counter">88</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-supreme">
+                          <label class="custom-control-label" for="brand-supreme">Cocosutra<small class="counter">186</small></label>
+                       </div>
+                       <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="brand-converse">
+                          <label class="custom-control-label" for="brand-converse">Complan<small class="counter">107</small></label>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="card">
+              <div class="card-header px-5 py-2 text-center"><button class="btn btn-primary rounded-pill btn-sm btn-block" data-dismiss="modal">APPLY</button></div>
+           </div>
+        </div>
+     </div>
+     <!-- /Shop Filters -->
+     <div class="col-lg-9 col-md-8">
+        <!-- Shop Toolbar -->
+        <div class="card mb-3">
+           <div class="card-body d-flex justify-content-end align-items-center py-2">
+              <button class="btn btn-sm btn-outline-primary rounded-pill d-block d-md-none mr-auto" data-toggle="modal" data-target="#filterModal"><i data-feather="filter"></i> Filter</button>
+              <ol class="breadcrumb d-none d-md-flex p-0 mb-0 mr-auto">
+                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                 <li class="breadcrumb-item"><a href="shop-grid.html">Beverages</a></li>
+                 <li class="breadcrumb-item active" aria-current="page">Energy & Health Drinks</li>
+              </ol>
+              <div class="dropdown dropdown-hover">
+                 <button class="btn btn-light btn-sm border rounded-pill dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Popular <i data-feather="chevron-down"></i>
+                 </button>
+                 <div class="dropdown-menu dropdown-menu-right shadow-sm" aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item" type="button">Popular</button>
+                    <button class="dropdown-item" type="button">Low - High Price</button>
+                    <button class="dropdown-item" type="button">High - Low Price</button>
+                    <button class="dropdown-item" type="button">Avarage Rating</button>
+                    <button class="dropdown-item" type="button">A - Z Order</button>
+                    <button class="dropdown-item" type="button">Z - A Order</button>
+                 </div>
+              </div>
+              <a href="shop-grid.html" class="btn btn-icon rounded-pill btn-sm btn-primary ml-3" data-toggle="tooltip" title="Show Grid"><i data-feather="grid"></i></a>
+              <a href="shop-list.html" class="btn btn-icon rounded-pill btn-sm btn-outline-primary ml-1" data-toggle="tooltip" title="Show List"><i data-feather="list"></i></a>
+           </div>
+        </div>
+        <!-- /Shop Toolbar -->
+        <!-- Shop Grid -->
+        <div class="card-deck card-deck-product with-sidebar mt-3">
+           <div class="col-md-4 card card-product">
+              <div class="card-body">
+                 <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+                 <button class="quickview quickview-demo" title="Quick view"><i data-feather="zoom-in"></i></button>
+                 <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/1_small.jpg" alt="Card image cap"></a>
+                 <span class="del">Safal</span>
+                 <span class="badge badge-warning"><i data-feather="star"></i> 3.5</span>
+                 <a href="shop-single.html" class="card-title">Frozen - Mixed Vegetables</a>
+                 <span class="badge badge-success">500 gm Pouch</span>
+                 <div class="price">
+                    <span class="h5 del">Rs 60</span>
+                    <span class="h5">Rs 54</span>
+                 </div>
+              </div>
+              <div class="card-footer">
+                 <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+           </div>
+           <div class="col-md-4 card card-product">
+              <div class="card-body">
+                 <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                 <button class="quickview quickview-demo" title="Quick view"><i data-feather="zoom-in"></i></button>
+                 <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/2_small.jpg" alt="Card image cap"></a>
+                 <span class="del">Safal</span>
+                 <span class="badge badge-warning"><i data-feather="star"></i> 4</span>
+                 <a href="shop-single.html" class="card-title">Green Peas - Select</a>
+                 <span class="badge badge-success">5 kg Pouch</span>
+                 <div class="price">
+                    <span class="h5">Rs 600</span>
+                 </div>
+              </div>
+              <div class="card-footer">
+                 <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+           </div>
+           <div class="col-md-4 card card-product">
+              <div class="card-body">
+                 <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                 <button class="quickview quickview-demo" title="Quick view"><i data-feather="zoom-in"></i></button>
+                 <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/3_small.jpg" alt="Card image cap"></a>
+                 <span class="del">Bangur</span>
+                 <span class="badge badge-warning"><i data-feather="star"></i> 2.8</span>
+                 <a href="shop-single.html" class="card-title">Frozen Natures Gold - Sweet Corn</a>
+                 <div class="quantity">
+                    <select class="form-control">
+                       <option>200 gm- Rs 36</option>
+                       <option>500 gm- Rs 63</option>
+                       <option>1 kg- Rs 117</option>
+                    </select>
+                 </div>
+                 <div class="price">
+                    <span class="h5 del">Rs 40</span>
+                    <span class="h5">Rs 36</span>
+                 </div>
+              </div>
+              <div class="card-footer">
+                 <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+           </div>
+           <div class="col-md-4 card card-product">
+              <div class="card-body">
+                 <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+                 <button class="quickview quickview-demo" title="Quick view"><i data-feather="zoom-in"></i></button>
+                 <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/1_small.jpg" alt="Card image cap"></a>
+                 <span class="del">Safal</span>
+                 <span class="badge badge-warning"><i data-feather="star"></i> 3.5</span>
+                 <a href="shop-single.html" class="card-title">Frozen - Mixed Vegetables</a>
+                 <span class="badge badge-success">500 gm Pouch</span>
+                 <div class="price">
+                    <span class="h5 del">Rs 60</span>
+                    <span class="h5">Rs 54</span>
+                 </div>
+              </div>
+              <div class="card-footer">
+                 <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+           </div>
+           <div class="col-md-4 card card-product">
+              <div class="card-body">
+                 <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                 <button class="quickview quickview-demo" title="Quick view"><i data-feather="zoom-in"></i></button>
+                 <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/2_small.jpg" alt="Card image cap"></a>
+                 <span class="del">Safal</span>
+                 <span class="badge badge-warning"><i data-feather="star"></i> 4</span>
+                 <a href="shop-single.html" class="card-title">Green Peas - Select</a>
+                 <span class="badge badge-success">5 kg Pouch</span>
+                 <div class="price">
+                    <span class="h5">Rs 600</span>
+                 </div>
+              </div>
+              <div class="card-footer">
+                 <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+           </div>
+           <div class="col-md-4 card card-product">
+              <div class="card-body">
+                 <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                 <button class="quickview quickview-demo" title="Quick view"><i data-feather="zoom-in"></i></button>
+                 <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/3_small.jpg" alt="Card image cap"></a>
+                 <span class="del">Bangur</span>
+                 <span class="badge badge-warning"><i data-feather="star"></i> 2.8</span>
+                 <a href="shop-single.html" class="card-title">Frozen Natures Gold - Sweet Corn</a>
+                 <div class="quantity">
+                    <select class="form-control">
+                       <option>200 gm- Rs 36</option>
+                       <option>500 gm- Rs 63</option>
+                       <option>1 kg- Rs 117</option>
+                    </select>
+                 </div>
+                 <div class="price">
+                    <span class="h5 del">Rs 40</span>
+                    <span class="h5">Rs 36</span>
+                 </div>
+              </div>
+              <div class="card-footer">
+                 <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+           </div>
+        </div>
+        <!-- /Shop Grid -->
+        <div class="card card-pagination">
+           <div class="card-body">
+              <a href="javascript:void(0)" class="btn btn-link btn-icon"><i data-feather="chevron-left"></i></a>
+              <div class="d-inline-flex">
+                 <a href="javascript:void(0)" class="btn btn-icon rounded-pill btn-light">1</a>
+                 <a href="javascript:void(0)" class="btn btn-icon rounded-pill btn-primary">2</a>
+                 <a href="javascript:void(0)" class="btn btn-icon rounded-pill btn-light">3</a>
+                 <button type="button" class="btn btn-icon rounded-pill bg-white">...</button>
+                 <a href="javascript:void(0)" class="btn btn-icon rounded-pill btn-light">10</a>
+              </div>
+              <a href="javascript:void(0)" class="btn btn-link btn-icon"><i data-feather="chevron-right"></i></a>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+<!-- /Main Content -->
