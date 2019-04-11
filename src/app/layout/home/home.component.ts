@@ -32,15 +32,6 @@ export class HomeComponent implements OnInit {
     ];
   }
 
-  getPrice(obj, type: string): number {
-    if (type === 'base') {
-      return obj.base_price;
-    }
-    if (type === 'selling') {
-      return obj.selling_price;
-    }
-  }
-
   getHomeProductList() {
       this.productService.homeProList().subscribe(
           (res: any) => {
