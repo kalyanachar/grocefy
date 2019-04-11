@@ -72,7 +72,7 @@ export class HeaderComponent implements OnInit {
 
     getMenuList() {
         this.userService.menuListing().subscribe(
-            res => {
+            (res: any) => {
                 console.log(res);
                 this.menuList = res.data;
                 this.visibleKey = true;
@@ -80,7 +80,7 @@ export class HeaderComponent implements OnInit {
             error => {
                 // console.log(error)
             }
-        )
+        );
     }
 
 

@@ -8,9 +8,9 @@ import { OwlModule } from 'ngx-owl-carousel';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  featuredProducts: any;
-  foodandBeverages: any;
-  houseHolds: any;
+  featuredProducts = [];
+  foodandBeverages = [];
+  houseHolds = [];
   visibleKey: boolean;
   images: any = [];
   constructor(
@@ -29,12 +29,21 @@ export class HomeComponent implements OnInit {
       {
        img: 'assests/img/slider/3.jpeg'
       }
-    ]
+    ];
+  }
+
+  getPrice(obj, type: string): number {
+    if (type === 'base') {
+      return obj.base_price;
+    }
+    if (type === 'selling') {
+      return obj.selling_price;
+    }
   }
 
   getHomeProductList() {
       this.productService.homeProList().subscribe(
-          res => {
+          (res: any) => {
               console.log('home pro list==>', res);
               this.featuredProducts = res.data.featuredProduct;
               this.foodandBeverages = res.data.foodAndBeverages;
@@ -44,7 +53,7 @@ export class HomeComponent implements OnInit {
           error => {
               // console.log(error)
           }
-      )
+      );
   }
 
 }
