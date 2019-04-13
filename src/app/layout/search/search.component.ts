@@ -15,10 +15,10 @@ export class SearchComponent implements OnInit {
   categoryBannerImage: any;
   defaultPagination: number;
   productResultNext: any;
-  userId:number;
-  catName:string;
-
-  searchTxt:any;
+  userId: number;
+  catName: string;
+  searchTxt: any;
+  searchText: any;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -26,8 +26,6 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   
-
     this.imageBaseUrl = environment.imageBaseUrl;
     this.userId = +localStorage.getItem('userId');
     this.searchTxt = this.route.snapshot.params['name']

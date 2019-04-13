@@ -7,19 +7,23 @@ import { Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-
+  headers:any;
   constructor(
     private http: HttpClient
-  ) { }
-
+  ) {
+   this.headers =   new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest'
+    });
+   }
+   /* Services used in this project start */
   homeProList() {
     return this.http.get(environment.apiEndpoint + 'home-items',{
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'X-Requested-With': 'XMLHttpRequest'
-      })
+      headers:this.headers
     })
   }
+   /* Services used in this project end */
+
   getCategoryList(): Observable<any> {
     return this.http.get(environment.apiEndpoint + 'productcategorylist/')
   }

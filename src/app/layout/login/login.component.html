@@ -1,7 +1,7 @@
 <div class="container my-3 my-sm-5">
 
       <!-- Login & Register Row -->
-      <div class="row justify-content-center" id="row-login">
+      <div class="row justify-content-center" id="row-login" *ngIf="isShow==1">
         <div class="col-sm-10 col-md-11 col-lg-9 col-xl-8">
           <div class="card card-login">
             <div class="card-body">
@@ -9,7 +9,7 @@
 
                 <!-- Login Form -->
                 <div class="col-md-6 col-login">
-                  <form class="form-style-1" [formGroup]="loginForm">
+                  <form class="form-style-1" [formGroup]="loginForm" novalidate>
                     <div class="form-group text-center mb-2">
                       <h2 class="bold mb-0">Log In</h2>
                       <em>to your account</em>
@@ -20,6 +20,12 @@
                         <input type="email" class="form-control" name="userName" placeholder="Email address"  formControlName="userName"
                         [ngClass]="displayFieldCss(loginForm,'userName')" required>
                       </span>
+                      <div class="invalid-feedback text-left" *ngIf="loginForm.controls['userName'].hasError('pattern') && !loginForm.controls['userName'].hasError('required')">
+                        Please enter a valid email address
+                      </div>
+                      <div class="invalid-feedback text-left" *ngIf="loginForm.controls['userName'].hasError('required')">
+                        Email is required
+                      </div>
                     </div>
                     <div class="form-group">
                       <span class="input-icon">
@@ -27,15 +33,18 @@
                         <input type="password"  name="userName" class="form-control" placeholder="Password" formControlName="password"
                         [ngClass]="displayFieldCss(loginForm,'password')" required>
                       </span>
+                      <div class="invalid-feedback text-left" *ngIf="isFieldValid(loginForm,'password')">
+                        Please enter password
+                      </div>
                     </div>
                     <div class="form-group d-flex justify-content-between">
                       <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="loginRemember">
                         <label class="custom-control-label" for="loginRemember">Remember me</label>
                       </div>
-                      <u><a href="#" class="text-primary small reset">Forgot password ?</a></u>
+                      <u><a class="text-primary small reset" (click)="gotoForgotSection()">Forgot password ?</a></u>
                     </div>
-                    <button type="button" class="btn btn-primary btn-block">LOGIN</button>
+                    <button type="button" class="btn btn-primary btn-block" (click)="signIn()">LOGIN</button>
                   </form>
                 </div>
                 <!-- /Login Form -->
@@ -44,35 +53,39 @@
 
                 <!-- Register Form -->
                 <div class="col-md-6 col-register">
-                  <form class="form-style-2">
+                  <form class="form-style-2" [formGroup]="signupForm" novalidate >
                     <div class="form-group text-center">
                       <h2 class="bold">Register</h2>
                     </div>
                     <div class="form-group">
                       <span class="input-icon">
                         <i data-feather="mail"></i>
-                        <input type="email" class="form-control" placeholder="Email address">
+                        <input type="email" class="form-control" placeholder="Email address" formControlName="email"
+                        [ngClass]="displayFieldCss(signupForm,'email')" required>
                       </span>
                     </div>
                     <div class="form-group">
                       <span class="input-icon">
                         <i data-feather="phone"></i>
-                        <input type="email" class="form-control" placeholder="Phone Number">
+                        <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone"
+                        [ngClass]="displayFieldCss(signupForm,'phone')" required>
                       </span>
                     </div>
                     <div class="form-group">
                       <span class="input-icon">
                         <i data-feather="lock"></i>
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" formControlName="password"
+                        [ngClass]="displayFieldCss(signupForm,'password')" required>
                       </span>
                     </div>
                     <div class="form-group">
                       <span class="input-icon">
                         <i data-feather="lock"></i>
-                        <input type="password" class="form-control" placeholder="Confirm Password">
+                        <input type="password" class="form-control" placeholder="Confirm Password" formControlName="confpassword"
+                        [ngClass]="displayFieldCss(signupForm,'confpassword')" required>
                       </span>
                     </div>
-                    <button type="button" class="btn btn-outline-primary btn-block">REGISTER</button>
+                    <button type="button" class="btn btn-outline-primary btn-block" (click)="signUp()">REGISTER</button>
                   </form>
                 </div>
                 <!-- /Register Form -->
@@ -85,7 +98,7 @@
       <!-- /Login & Register Row -->
 
       <!-- Reset Password -->
-      <div class="row justify-content-center" id="row-reset" hidden>
+      <div class="row justify-content-center" id="row-reset" *ngIf="isShow==2">
         <div class="col-sm-8 col-md-6 col-lg-5 col-xl-4">
           <div class="card">
             <div class="card-body">
@@ -103,7 +116,7 @@
                 <button type="button" class="btn btn-danger btn-block reset-done">RESET</button>
               </form>
               <hr>
-              <button class="btn btn-light btn-sm login"><i data-feather="arrow-left"></i> Back to login</button>
+              <button class="btn btn-light btn-sm login" (click)='gotoLoginSection()'><i data-feather="arrow-left"></i> Back to login</button>
             </div>
           </div>
         </div>

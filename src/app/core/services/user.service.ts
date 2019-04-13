@@ -7,11 +7,16 @@ import { Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-
+  headers:any;
   @Output() getLoggedInStatus: EventEmitter<any> = new EventEmitter();
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.headers =   new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest'
+    });
+   }
 
   loginStatus(data): Observable<any> {
     if (data = true) {
@@ -21,12 +26,20 @@ export class UserService {
   }
 
   userSignin(data): Observable<any> {
-    return this.http.post(environment.apiEndpoint + 'login/', data)
+    return this.http.post(environment.apiEndpoint + 'login/', data,{
+      headers:this.headers
+    })
   }
 
   userSignup(data): Observable<any> {
-    return this.http.post(environment.apiEndpoint + 'userregister/', data)
+    return this.http.post(environment.apiEndpoint + 'create-user/', data,{
+      headers:this.headers
+    })
   }
+
+  // userSignup(data): Observable<any> {
+  //   return this.http.post(environment.apiEndpoint + 'userregister/', data)
+  // }
   userForgotPassword(data): Observable<any> {
     return this.http.post(environment.apiEndpoint + 'userforgetpasswordotp/', data)
   }
@@ -60,10 +73,7 @@ export class UserService {
 
   menuListing() {
     return this.http.get(environment.apiEndpoint + 'get-menues',{
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'X-Requested-With': 'XMLHttpRequest'
-      })
+      headers:this.headers
     })
   }
 

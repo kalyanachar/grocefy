@@ -1,57 +1,61 @@
       <!-- Top bar -->
       <div class="topbar">
         <div class="container d-flex">
-           <!-- service contact -->
-           <nav class="nav d-none d-md-flex"> 
-              <a class="nav-link pl-0" href="javascript:void(0)"><i data-feather="phone"></i> 212 123 456 789</a>
-              <a class="nav-link pl-0" href="javascript:void(0)"><i data-feather="mail"></i> info@grocefy.com</a>
-           </nav>
-           <!-- social media -->
-           <nav class="nav">
-              <a class="nav-link pr-2 pl-0" href="javascript:void(0)"><i data-feather="facebook"></i></a>
-              <a class="nav-link px-2 pl-0" href="javascript:void(0)"><i data-feather="twitter"></i></a>
-              <a class="nav-link px-2 pl-0" href="javascript:void(0)"><i data-feather="instagram"></i></a>
-           </nav>
-           <!-- language -->
-           <nav class="nav nav-lang ml-auto">
-              <!-- push it to the right -->
-              <a class="nav-link" [routerLink]="['/login']">Login</a>
-              <a class="nav-link pipe pl-0">|</a>
-              <a class="nav-link" [routerLink]="['/contactus']">Contact Us</a>
-           </nav>
+          <!-- service contact -->
+          <nav class="nav d-none d-md-flex">
+            <a class="nav-link pl-0" href="javascript:void(0)"><i data-feather="phone"></i> 212 123 456 789</a>
+            <a class="nav-link pl-0" href="javascript:void(0)"><i data-feather="mail"></i> info@grocefy.com</a>
+          </nav>
+          <!-- social media -->
+          <nav class="nav">
+            <a class="nav-link pr-2 pl-0" href="javascript:void(0)"><i data-feather="facebook"></i></a>
+            <a class="nav-link px-2 pl-0" href="javascript:void(0)"><i data-feather="twitter"></i></a>
+            <a class="nav-link px-2 pl-0" href="javascript:void(0)"><i data-feather="instagram"></i></a>
+          </nav>
+          <!-- language -->
+          <nav class="nav nav-lang ml-auto">
+            <!-- push it to the right -->
+            <a class="nav-link" [routerLink]="['/login']">Login</a>
+            <a class="nav-link pipe pl-0">|</a>
+            <a class="nav-link" [routerLink]="['/contactus']">Contact Us</a>
+          </nav>
         </div>
         <!-- /.container -->
-     </div>
-     <!-- /Top bar -->
-     <!--Header -->
-     <header>
+      </div>
+      <!-- /Top bar -->
+      <!--Header -->
+      <header>
         <div class="container">
-           <!-- Sidebar toggler -->
-           <a class="nav-link nav-icon ml-ni nav-toggler mr-3 d-flex d-lg-none" href="#" data-toggle="modal" data-target="#menuModal"><i data-feather="menu"></i></a>
-           <!-- Logo -->
-           <a class="nav-link nav-logo logo_agile" href="index.html">
-              <img src="assets/img/logo.png" height="68" alt="Logo">
-           </a>
-           <!-- Main navigation -->
-           <ul class="nav nav-main ml-auto d-none d-lg-flex">
-              <!-- hidden on md -->
-              <li  *ngFor="let menu of menuList" class="nav-item dropdown dropdown-hover dropdown-mega">
-                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                 {{menu.name}}<i data-feather="chevron-down"></i>
-                 </a>
-                 <div class="dropdown-menu">
-                    <div class="row">
-                       <div class="col-lg-3" *ngFor="let subCat of menu.sub_categories">
-                          <div class="list-group list-group-flush list-group-no-border list-group-sm">
-                             <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>{{subCat.name}}</strong></a>
-                             <a *ngFor="let proType of subCat.product_types" href="shop-grid.html" class="list-group-item list-group-item-action">{{proType.name}}</a>
-                             <!-- <a href="shop-grid.html" class="list-group-item list-group-item-action">Fruit Drink & Juice</a>
+          <!-- Sidebar toggler -->
+          <a class="nav-link nav-icon ml-ni nav-toggler mr-3 d-flex d-lg-none" href="#" data-toggle="modal"
+            data-target="#menuModal"><i data-feather="menu"></i></a>
+          <!-- Logo -->
+          <a class="nav-link nav-logo logo_agile" href="/#/">
+            <img src="assets/img/logo.png" height="68" alt="Logo">
+          </a>
+          <!-- Main navigation -->
+          <ul class="nav nav-main ml-auto d-none d-lg-flex">
+            <!-- hidden on md -->
+            <li *ngFor="let menu of menuList" class="nav-item dropdown dropdown-hover dropdown-mega">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" (click)='gotoproductPage()' role="button" aria-haspopup="true"
+                aria-expanded="false">
+                {{menu.name}}<i data-feather="chevron-down"></i>
+              </a>
+              <div class="dropdown-menu">
+                <div class="row">
+                  <div class="col-lg-3" *ngFor="let subCat of menu.sub_categories">
+                    <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                      <a (click)='gotoproductPage(subCat.id)'
+                        class="list-group-item list-group-item-action"><strong>{{subCat.name}}</strong></a>
+                      <a *ngFor="let proType of subCat.product_types" (click)='gotoproductPage(proType.id)'
+                        class="list-group-item list-group-item-action">{{proType.name}}</a>
+                      <!-- <a href="shop-grid.html" class="list-group-item list-group-item-action">Fruit Drink & Juice</a>
                              <a href="shop-grid.html" class="list-group-item list-group-item-action">Minearal Water</a>
                              <a href="shop-grid.html" class="list-group-item list-group-item-action">Soft Drinks</a>
                              <a href="shop-grid.html" class="list-group-item list-group-item-action">Cofee</a> -->
-                          </div>
-                       </div>
-                       <!-- <div class="col-lg-3 border-left">
+                    </div>
+                  </div>
+                  <!-- <div class="col-lg-3 border-left">
                           <div class="list-group list-group-flush list-group-no-border list-group-sm">
                              <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Bread, Bekary & Dairy</strong></a>
                              <a href="shop-grid.html" class="list-group-item list-group-item-action">Biscuits</a>
@@ -71,7 +75,7 @@
                              <a href="shop-grid.html" class="list-group-item list-group-item-action">Skin Care</a>
                           </div>
                        </div> -->
-                       <!-- <div class="col-lg-3 border-left">
+                  <!-- <div class="col-lg-3 border-left">
                           <div class="list-group list-group-flush list-group-no-border list-group-sm">
                              <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>Foodgrains, Oil & Masala</strong></a>
                              <a href="shop-grid.html" class="list-group-item list-group-item-action">Atta, Flours & Sooji</a>
@@ -97,10 +101,10 @@
                              <a href="shop-grid.html" class="list-group-item list-group-item-action">Indian Mithai</a>
                           </div>
                        </div> -->
-                    </div>
-                 </div>
-              </li>
-              <!-- <li class="nav-item dropdown dropdown-hover dropdown-mega">
+                </div>
+              </div>
+            </li>
+            <!-- <li class="nav-item dropdown dropdown-hover dropdown-mega">
                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                  Household<i data-feather="chevron-down"></i>
                  </a>
@@ -193,80 +197,87 @@
                  </div>
               </li>
               <li class="nav-item"><a class="nav-link" href="offer.html">Offers</a></li> -->
-           </ul>
-           <!-- /Main navigation -->
-           <!-- Search form -->
-           <form class="form-inline form-search ml-auto mr-0 mr-sm-1 d-none d-sm-flex">
-              <div class="input-group input-group-search">
-                 <div class="input-group-prepend">
-                    <button class="btn btn-light d-flex d-sm-none search-toggle" type="button"><i data-feather="chevron-left"></i></button>
-                 </div>
-                 <input type="text" class="form-control border-0 bg-light input-search" placeholder="Search Products...">
-                 <div class="input-group-append">
-                    <button class="btn btn-light" type="submit"><i data-feather="search"></i></button>
-                 </div>
+          </ul>
+          <!-- /Main navigation -->
+          <!-- Search form -->
+          <form class="form-inline form-search ml-auto mr-0 mr-sm-1 d-none d-sm-flex">
+            <div class="input-group input-group-search">
+              <div class="input-group-prepend">
+                <button class="btn btn-light d-flex d-sm-none search-toggle" type="button"><i
+                    data-feather="chevron-left"></i></button>
               </div>
-           </form>
-           <!-- /Search form -->
-           <ul class="nav ml-auto ml-sm-0">
-              <!-- Search form toggler -->
-              <li class="nav-item d-block d-sm-none ml-2 ml-lg-0"><a class="nav-link nav-icon search-toggle" href="#"><i data-feather="search"></i></a></li>
-              <!-- Cart dropdown -->
-              <li class="nav-item dropdown dropdown-hover dropdown-cart">
-                 <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="cart.html" role="button" aria-haspopup="true" aria-expanded="false">
-                 <i data-feather="shopping-cart"></i>
-                 <span class="badge badge-primary">4</span>
-                 </a>
-                 <div class="dropdown-menu dropdown-menu-right">
-                    <div class="media">
-                       <a href="shop-single.html"><img src="assets/img/products/1_small.jpg" width="50" height="50" alt="Hanes Hooded Sweatshirt"></a>
-                       <div class="media-body">
-                          <a href="shop-single.html" title="Hanes Hooded Sweatshirt">Hanes Hooded Sweatshirt</a>
-                          <span class="qty">1</span> x <span class="price">$18.56</span>
-                          <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
-                       </div>
-                    </div>
-                    <div class="media">
-                       <a href="shop-single.html"><img src="assets/img/products/2_small.jpg" width="50" height="50" alt="The Flash Logo T-Shirt"></a>
-                       <div class="media-body">
-                          <a href="shop-single.html" title="The Flash Logo T-Shirt">The Flash Logo T-Shirt</a>
-                          <span class="qty">1</span> x <span class="price">$16.64</span>
-                          <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
-                       </div>
-                    </div>
-                    <div class="media">
-                       <a href="shop-single.html"><img src="assets/img/products/3_small.jpg" width="50" height="50" alt="Open Front Cropped Cardigans"></a>
-                       <div class="media-body">
-                          <a href="shop-single.html" title="Open Front Cropped Cardigans">Open Front Cropped Cardigans</a>
-                          <span class="qty">1</span> x <span class="price">$15.20</span>
-                          <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
-                       </div>
-                    </div>
-                    <div class="media">
-                       <a href="shop-single.html"><img src="assets/img/products/4_small.jpg" width="50" height="50" alt="Cotton Fleece Long Hoodie"></a>
-                       <div class="media-body">
-                          <a href="shop-single.html" title="Cotton Fleece Long Hoodie">Cotton Fleece Long Hoodie</a>
-                          <span class="qty">1</span> x <span class="price">$85.00</span>
-                          <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
-                       </div>
-                    </div>
-                    <div class="d-flex justify-content-between pb-3 pt-2">
-                       <span>Total</span>
-                       <strong>$135.40</strong>
-                    </div>
-                    <div class="d-flex justify-content-between pb-2">
-                       <div class="w-100 mr-1">
-                          <a href="cart.html" class="btn btn-block rounded-pill btn-secondary">View Cart</a>
-                       </div>
-                       <div class="w-100 ml-1">
-                          <a href="shipping.html" class="btn btn-block rounded-pill btn-primary">Checkout</a>
-                       </div>
-                    </div>
-                 </div>
-              </li>
-              <!-- /Cart dropdown -->
-           </ul>
+              <input type="text" class="form-control border-0 bg-light input-search" placeholder="Search Products...">
+              <div class="input-group-append">
+                <button class="btn btn-light" type="submit"><i data-feather="search"></i></button>
+              </div>
+            </div>
+          </form>
+          <!-- /Search form -->
+          <ul class="nav ml-auto ml-sm-0">
+            <!-- Search form toggler -->
+            <li class="nav-item d-block d-sm-none ml-2 ml-lg-0"><a class="nav-link nav-icon search-toggle" href="#"><i
+                  data-feather="search"></i></a></li>
+            <!-- Cart dropdown -->
+            <li class="nav-item dropdown dropdown-hover dropdown-cart">
+              <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown"
+                href="cart.html" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span class="badge badge-primary">4</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <div class="media">
+                  <a href="shop-single.html"><img src="assets/img/products/1_small.jpg" width="50" height="50"
+                      alt="Hanes Hooded Sweatshirt"></a>
+                  <div class="media-body">
+                    <a href="shop-single.html" title="Hanes Hooded Sweatshirt">Hanes Hooded Sweatshirt</a>
+                    <span class="qty">1</span> x <span class="price">$18.56</span>
+                    <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                  </div>
+                </div>
+                <div class="media">
+                  <a href="shop-single.html"><img src="assets/img/products/2_small.jpg" width="50" height="50"
+                      alt="The Flash Logo T-Shirt"></a>
+                  <div class="media-body">
+                    <a href="shop-single.html" title="The Flash Logo T-Shirt">The Flash Logo T-Shirt</a>
+                    <span class="qty">1</span> x <span class="price">$16.64</span>
+                    <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                  </div>
+                </div>
+                <div class="media">
+                  <a href="shop-single.html"><img src="assets/img/products/3_small.jpg" width="50" height="50"
+                      alt="Open Front Cropped Cardigans"></a>
+                  <div class="media-body">
+                    <a href="shop-single.html" title="Open Front Cropped Cardigans">Open Front Cropped Cardigans</a>
+                    <span class="qty">1</span> x <span class="price">$15.20</span>
+                    <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                  </div>
+                </div>
+                <div class="media">
+                  <a href="shop-single.html"><img src="assets/img/products/4_small.jpg" width="50" height="50"
+                      alt="Cotton Fleece Long Hoodie"></a>
+                  <div class="media-body">
+                    <a href="shop-single.html" title="Cotton Fleece Long Hoodie">Cotton Fleece Long Hoodie</a>
+                    <span class="qty">1</span> x <span class="price">$85.00</span>
+                    <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between pb-3 pt-2">
+                  <span>Total</span>
+                  <strong>$135.40</strong>
+                </div>
+                <div class="d-flex justify-content-between pb-2">
+                  <div class="w-100 mr-1">
+                    <a href="cart.html" class="btn btn-block rounded-pill btn-secondary">View Cart</a>
+                  </div>
+                  <div class="w-100 ml-1">
+                    <a href="shipping.html" class="btn btn-block rounded-pill btn-primary">Checkout</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- /Cart dropdown -->
+          </ul>
         </div>
         <!-- /.container -->
-     </header>
-     <!-- /Header -->
+      </header>
+      <!-- /Header -->

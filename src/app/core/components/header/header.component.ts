@@ -83,6 +83,10 @@ export class HeaderComponent implements OnInit {
         );
     }
 
+    gotoproductPage(id) {
+      this.router.navigate(['/product',id]);
+    }
+
 
   // logout() {
   //   localStorage.clear();

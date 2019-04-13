@@ -10,12 +10,19 @@ import { ProductService } from '../../core/services/product.service';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+  displayMode:any;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private productService: ProductService,
-  ) { }
+  ) { 
+    this.displayMode='grid';
+  }
   ngOnInit() {
+  }
+
+  display(view) {
+    this.displayMode=view;
   }
   gotoProductDetails(id) {
     this.router.navigate(['/product/details', id]);

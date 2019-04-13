@@ -179,7 +179,7 @@
         </div>
      </div>
      <!-- /Shop Filters -->
-     <div class="col-lg-9 col-md-8">
+     <div class="col-lg-9 col-md-8" *ngIf="displayMode=='grid'">
         <!-- Shop Toolbar -->
         <div class="card mb-3">
            <div class="card-body d-flex justify-content-end align-items-center py-2">
@@ -202,8 +202,8 @@
                     <button class="dropdown-item" type="button">Z - A Order</button>
                  </div>
               </div>
-              <a href="shop-grid.html" class="btn btn-icon rounded-pill btn-sm btn-primary ml-3" data-toggle="tooltip" title="Show Grid"><i data-feather="grid"></i></a>
-              <a href="shop-list.html" class="btn btn-icon rounded-pill btn-sm btn-outline-primary ml-1" data-toggle="tooltip" title="Show List"><i data-feather="list"></i></a>
+              <a (click)="display('grid')" class="btn btn-icon rounded-pill btn-sm btn-primary ml-3" data-toggle="tooltip" title="Show Grid"><i data-feather="grid"></i></a>
+              <a (click)="display('list')" class="btn btn-icon rounded-pill btn-sm btn-outline-primary ml-1" data-toggle="tooltip" title="Show List"><i data-feather="list"></i></a>
            </div>
         </div>
         <!-- /Shop Toolbar -->
@@ -343,6 +343,136 @@
            </div>
         </div>
      </div>
+
+     <div class="col-lg-9 col-md-8"  *ngIf="displayMode=='list'">
+
+      <!-- Shop Toolbar -->
+      <div class="card mb-3">
+        <div class="card-body d-flex justify-content-end align-items-center py-2">
+           <button class="btn btn-sm btn-outline-primary rounded-pill d-block d-md-none mr-auto" data-toggle="modal" data-target="#filterModal"><i data-feather="filter"></i> Filter</button>
+           <ol class="breadcrumb d-none d-md-flex p-0 mb-0 mr-auto">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="shop-grid.html">Beverages</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Energy & Health Drinks</li>
+           </ol>
+           <div class="dropdown dropdown-hover">
+              <button class="btn btn-light btn-sm border rounded-pill dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Popular <i data-feather="chevron-down"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right shadow-sm" aria-labelledby="dropdownMenuButton">
+                 <button class="dropdown-item" type="button">Popular</button>
+                 <button class="dropdown-item" type="button">Low - High Price</button>
+                 <button class="dropdown-item" type="button">High - Low Price</button>
+                 <button class="dropdown-item" type="button">Avarage Rating</button>
+                 <button class="dropdown-item" type="button">A - Z Order</button>
+                 <button class="dropdown-item" type="button">Z - A Order</button>
+              </div>
+           </div>
+           <a (click)="display('grid')" class="btn btn-icon rounded-pill btn-sm btn-primary ml-3" data-toggle="tooltip" title="Show Grid"><i data-feather="grid"></i></a>
+           <a (click)="display('list')" class="btn btn-icon rounded-pill btn-sm btn-outline-primary ml-1" data-toggle="tooltip" title="Show List"><i data-feather="list"></i></a>
+        </div>
+     </div>
+      <!-- /Shop Toolbar -->
+
+      <!-- Shop List -->
+      <div class="row gutters-3 mt-3">
+        <div class="col-12">
+          <div class="card card-product card-product-list">
+            <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/1_small.jpg" alt="Card image cap"></a>
+            <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+            <div class="card-body">
+              <span class="del">Safal</span>
+              <span class="badge badge-warning"><i data-feather="star"></i> 4</span>
+              <a href="shop-single.html" class="card-title">Frozen - Mixed Vegetables</a>
+              <span class="badge badge-success">500 gm Pouch</span>
+              <div class="price">
+                 <span class="h5 del">Rs 60</span>
+                 <span class="h5">Rs 54</span>
+              </div>
+              <p class="d-none d-sm-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ad natus quae dolores quisquam. Facere sint quidem, modi dignissimos enim!</p>
+              <div class="btn-group">
+              <button class="btn btn-sm rounded-pill btn-outline-primary btn-icon quickview-demo mr-1" title="Quick view"><i data-feather="zoom-in"></i></button>
+              <button class="btn btn-sm rounded-pill btn-outline-primary atc-demo">Add to Cart</button>
+            </div>
+            </div>
+          </div>
+        </div>
+       <div class="col-12 mt-3">
+          <div class="card card-product card-product-list">
+            <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/2_small.jpg" alt="Card image cap"></a>
+            <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+            <div class="card-body">
+              <span class="del">Safal</span>
+               <span class="badge badge-warning"><i data-feather="star"></i> 3.5</span>
+              <a href="shop-single.html" class="card-title">Green Peas - Select</a>
+              <span class="badge badge-success">5 kg Pouch</span>
+              <div class="price">
+                 <span class="h5">Rs 600</span>
+              </div>
+              <p class="d-none d-sm-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ad natus quae dolores quisquam. Facere sint quidem, modi dignissimos enim!</p>
+              <div class="btn-group">
+              <button class="btn btn-sm rounded-pill btn-outline-primary btn-icon quickview-demo mr-1" title="Quick view"><i data-feather="zoom-in"></i></button>
+              <button class="btn btn-sm rounded-pill btn-outline-primary atc-demo">Add to Cart</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-3">
+          <div class="card card-product card-product-list">
+            <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/3_small.jpg" alt="Card image cap"></a>
+            <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+            <div class="card-body">
+              <span class="del">Safal</span>
+              <span class="badge badge-warning"><i data-feather="star"></i> 3.2</span>
+               <a href="shop-single.html" class="card-title">Frozen Natures Gold - Sweet Corn</a>
+              <div class="quantity">
+                 <select class="form-control">
+                    <option>200 gm- Rs 36</option>
+                    <option>500 gm- Rs 63</option>
+                    <option>1 kg- Rs 117</option>
+                 </select>
+              </div>
+              <div class="price">
+                 <span class="h5 del">Rs 40</span>
+                 <span class="h5">Rs 36</span>
+              </div>
+              <p class="d-none d-sm-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ad natus quae dolores quisquam. Facere sint quidem, modi dignissimos enim!</p>
+              <div class="btn-group">
+              <button class="btn btn-sm rounded-pill btn-outline-primary btn-icon quickview-demo mr-1" title="Quick view"><i data-feather="zoom-in"></i></button>
+              <button class="btn btn-sm rounded-pill btn-outline-primary atc-demo">Add to Cart</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-3">
+          <div class="card card-product card-product-list">
+            <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/4_small.jpg" alt="Card image cap"></a>
+            <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+            <div class="card-body">
+              <span class="del">Safal</span>
+              <span class="badge badge-warning"><i data-feather="star"></i> 2.8</span>
+              <a href="shop-single.html" class="card-title">Green Peas</a>
+              <div class="quantity">
+                 <select class="form-control">
+                    <option>500 gm- Rs 119</option>
+                    <option>1 kg- Rs 228</option>
+                 </select>
+              </div>
+              <div class="price">
+                 <span class="h5">Rs 228</span>
+              </div>
+              <p class="d-none d-sm-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ad natus quae dolores quisquam. Facere sint quidem, modi dignissimos enim!</p>
+              <div class="btn-group">
+              <button class="btn btn-sm rounded-pill btn-outline-primary btn-icon quickview-demo mr-1" title="Quick view"><i data-feather="zoom-in"></i></button>
+              <button class="btn btn-sm rounded-pill btn-outline-primary atc-demo">Add to Cart</button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Shop List -->
+
+    </div>
   </div>
 </div>
 <!-- /Main Content -->
