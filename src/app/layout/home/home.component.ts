@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../core/services/product.service';
 import { OwlModule } from 'ngx-owl-carousel';
 @Component({
@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   visibleKey: boolean;
   images: any = [];
   constructor(
+    private router: Router,
     public productService: ProductService
   ) { }
 
@@ -45,6 +46,14 @@ export class HomeComponent implements OnInit {
               // console.log(error)
           }
       );
+  }
+
+  gotoDetails() {
+    this.router.navigate(['/product/details', 1]);
+  }
+
+  gotoCartPage() {
+    this.router.navigate(['/cart']);
   }
 
 }

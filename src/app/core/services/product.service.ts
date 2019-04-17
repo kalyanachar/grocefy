@@ -16,13 +16,20 @@ export class ProductService {
       'X-Requested-With': 'XMLHttpRequest'
     });
    }
-   /* Services used in this project start */
+   /* Services used in Grocefy project start */
   homeProList() {
     return this.http.get(environment.apiEndpoint + 'home-items',{
       headers:this.headers
     })
   }
-   /* Services used in this project end */
+
+  getProductList(data): Observable<any> {
+    console.log("Data",data);
+ return this.http.post(environment.apiEndpoint + 'search-products/', data,{
+  headers:this.headers
+})
+  }
+   /* Services used in Grocefy project end */
 
   getCategoryList(): Observable<any> {
     return this.http.get(environment.apiEndpoint + 'productcategorylist/')
@@ -36,9 +43,7 @@ export class ProductService {
   getCombooffertList(user_id): Observable<any> {
     return this.http.get(environment.apiEndpoint + 'productslistbycombo/'+user_id)
   }
-  getProductList(id,user_id,params): Observable<any> {
-    return this.http.get(environment.apiEndpoint + 'productslistbycatid/'+id+'/'+user_id+'/?'+params)
-  }
+  
   getAllRecipeList(params): Observable<any> {
     return this.http.get(environment.apiEndpoint + 'recipelist/recipe/?'+params)
   }

@@ -113,10 +113,10 @@
         <div class="card-body">
            <button class="wishlist atw-demo active" title="Added to wishlist"><i class="fa fa-heart" aria-hidden="true"></i></button>
            <button class="quickview quickview-demo" title="Quick view"><i data-feather="zoom-in"></i></button>
-           <a href="shop-single.html"><img class="card-img-top" src="assets/img/products/1_small.jpg" alt="Card image cap"></a>
+           <a (click)="gotoDetails()"><img class="card-img-top" src="assets/img/products/1_small.jpg" alt="Card image cap"></a>
            <span class="del">{{foodBeverage.brand.name}}</span>
            <span class="badge badge-warning"><i data-feather="star"></i> 4</span>
-           <a href="shop-single.html" class="card-title">{{foodBeverage.name}}</a>
+           <a (click)="gotoDetails()" class="card-title">{{foodBeverage.name}}</a>
            <span class="badge badge-success">500 gm Pouch</span>
            <div class="quantity">
             <select class="form-control" >
@@ -126,12 +126,13 @@
             </select>
          </div>
            <div class="price">
-              <span class="h5 del">Rs {{specification.base_price}}</span>
-              <span class="h5">Rs {{specification.selling_price}}</span>
+           
+              <span class="h5 del">Rs {{foodBeverage.specification[0].base_price}}</span>
+              <span class="h5">Rs {{foodBeverage.specification[0].selling_price}}</span>
            </div>
         </div>
         <div class="card-footer">
-           <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+           <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo" (click)="gotoCartPage()">Add to Cart</button>
         </div>
      </div>
      <!-- <div class="col-md-3 card card-product">
