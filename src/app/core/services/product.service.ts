@@ -25,7 +25,7 @@ export class ProductService {
 
   getProductList(data): Observable<any> {
     console.log("Data",data);
- return this.http.post(environment.apiEndpoint + 'search-products/', data,{
+ return this.http.post(environment.apiEndpoint + 'search-products', data,{
   headers:this.headers
 })
   }

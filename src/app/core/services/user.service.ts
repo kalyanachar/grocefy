@@ -26,9 +26,10 @@ export class UserService {
   }
 
   userSignin(data): Observable<any> {
-    return this.http.post(environment.apiEndpoint + 'login/', data,{
-      headers:this.headers
-    })
+
+    return this.http.post(environment.apiEndpoint + 'login', data, {
+      headers: this.headers
+    }).pipe(response => response);
   }
 
   userSignup(data): Observable<any> {
